@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 
 from .permissions import OwnerOrReadOnly
 from .pagination import PostPagination
-from posts.models import Post, User, Comment, Follow, Group
+from posts.models import Post, Follow, Group
 
 from .serializers import (PostSerializer,
                           CommentSerializer,
