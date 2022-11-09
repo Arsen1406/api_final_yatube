@@ -40,7 +40,7 @@ class PostViewSet(viewsets.ModelViewSet):
     """Все посты"""
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = (OwnerOrReadOnly,)
+    permission_classes = (OwnerOrReadOnly, permissions.IsAuthenticatedOrReadOnly)
     pagination_class = PostPagination
 
     def perform_create(self, serializer):
@@ -50,7 +50,7 @@ class PostViewSet(viewsets.ModelViewSet):
 class CommentsViewSet(viewsets.ModelViewSet):
     """Комментарии к постам"""
     serializer_class = CommentSerializer
-    permission_classes = (OwnerOrReadOnly,)
+    permission_classes = (OwnerOrReadOnly, permissions.IsAuthenticatedOrReadOnly)
 
     def perform_create(self, serializer):
         post = get_object_or_404(Post, id=self.kwargs.get('post_id'))
