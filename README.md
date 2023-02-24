@@ -8,7 +8,7 @@
  - производить/просматривать подписки на авторов
 
 Клонируйте репозиторий на своё устройство:
-- git clone https://github.com/yandex-praktikum/kittygram2plus.git
+- git clone <ссылка на проект>
 
 Перейдите в директорию:
 - cd api_final_yatube
